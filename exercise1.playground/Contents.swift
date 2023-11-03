@@ -50,7 +50,7 @@ for i in 0..<arrayNumber.count{
     let powNumber = pow(10, count - i - 1)
     let x = NSDecimalNumber(decimal: powNumber)
     let plit = arrayNumber[i]
-    let result = Int(x) * plit
+    let result = Int(truncating: x) * plit
     sum += result
     
 }
@@ -83,5 +83,43 @@ func Inversed(input: Int) -> Int
     return Sum
 }
 
-print("convert 123 -> \(Inversed(input: 123))")
-print("convert 24353 -> \(Inversed(input: 24353))")
+print("convert 123 -> \(Inversed(input: 1))")
+print("convert 24353 -> \(Inversed(input: 90))")
+
+
+// calling a func from another func
+
+func sumNumber(numbers: Int) -> Int
+{
+    var Array: [Int] = []
+    var singleNumber  = 0
+    var newNumbers = numbers
+    
+    while newNumbers > 10
+    {
+        singleNumber = newNumbers % 10
+        Array.append(singleNumber)
+        newNumbers /= 10
+    }
+    Array.append(newNumbers)
+    
+    var reversed = reverse(numberArray: Array)
+    
+    var sum = add(reversed: reversed)
+    
+    return sum
+    
+}
+func reverse(numberArray: [Int]) -> [Int]
+{
+    return numberArray.reversed()
+}
+func add(reversed: [Int]) -> Int
+{
+    var sum = 0
+    for i in 0 ..< reversed.count{
+        sum += reversed[i]
+    }
+    return sum
+}
+sumNumber(numbers: 123)
