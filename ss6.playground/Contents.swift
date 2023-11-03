@@ -36,6 +36,38 @@ print(Combine)
 let dinner = ["soup","drink"]
 Combine += dinner
 print(Combine)
+// adding values
+
+//c1
+var trees = ["lan","maple"]
+trees.append("phuong")
+trees.insert("diep", at: 2)
+print(trees)
+trees.append("hoa giay")
+var numBer = [1,2,3,4]
+numBer.append(5)
+print(numBer)
+//c2
+trees += ["bang"]
+print(trees)
+//insert
+numBer.insert(8, at: 0)
+numBer.insert(12, at: 6)
+print(numBer)
+
+var fishs = ["tai tuong","ro phi","dieu hong","me","tra","trong co"]
+fishs.remove(at: 2)
+print(fishs)
+fishs[2...4] = ["John","Lisa"]
+print(fishs)
+
+
+
+
+
+
+
+
 
 
 

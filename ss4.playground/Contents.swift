@@ -6,6 +6,8 @@ import UIKit
 var rain = false
 if rain {
     print ("It's will rain today")
+}else{
+    print("yes")
 }
 var x = 5
 var y = 7
